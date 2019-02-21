@@ -1,8 +1,22 @@
 GitHub Repo:
-
 http://github.com/anudeep-balusani/rottenpotatoes-rails-intro
 
 
 Heroku app:
-
 http://desolate-scrubland-44508.herokuapp.com/
+
+
+Heroku Logs:
+heroku_logs_for_all_parts -> has heroku logs 
+
+
+Balusani_Anudeep_HW2.txt (this file) was SUBMITTED to ecampus.
+
+
+In file description on GitHub:
+
+Part 1 Complete - indicates git commit & push after part 1
+Part 2 Complete - indicates git commit & push after part 2
+Part 3 Complete - indicates git commit & push after part 3
+
+Updates to heroku were performed in parallel to the git commits.
