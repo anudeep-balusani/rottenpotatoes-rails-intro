@@ -13,6 +13,20 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
 
+    #Begin Part 2
+    @all_ratings = Movie.ratings_list
+
+    #Start with all checked 
+    @checked_ratings = @all_ratings
+
+    if params[:ratings]
+	    #current session keys
+	    @checked_ratings = (params[:ratings]).keys
+    end
+
+    @movies = @movies.where('rating in (?)', @checked_ratings)
+    #End Part 2
+
     #Begin Part 1
     if params[:sort_by]
 	    @sorting = params[:sort_by]
