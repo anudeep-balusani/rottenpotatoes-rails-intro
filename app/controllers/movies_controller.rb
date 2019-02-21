@@ -22,7 +22,23 @@ class MoviesController < ApplicationController
     if params[:ratings]
 	    #current session keys
 	    @checked_ratings = (params[:ratings]).keys
+            #Begin Part 3 (Addition)
+    else
+	    if session[:ratings]
+		    #sustaining older session keys
+		    @checked_ratings = session[:ratings]
+	    else
+		    #defaul => all checked
+		    @checked_ratings = @all_ratings
+	    end
+
     end
+
+    if @checked_ratings != session[:ratings]
+	    #consistency 
+	    session[:ratings] = @checked_ratings
+    end
+            #End Part 3 (Addition)
 
     @movies = @movies.where('rating in (?)', @checked_ratings)
     #End Part 2
@@ -34,7 +50,11 @@ class MoviesController < ApplicationController
 	    @sorting = session[:sort_by]
     end
 
-
+          # Begin Part 3(Addition)
+    if @sorting != session[:sort_by]
+	    session[:sort_by] = @sorting 
+    end
+          #End Part 3 (Addition)
     if @sorting == 'title'
 	    @movies = @movies.order(@sorting)
 	    @title_header = 'hilite'
