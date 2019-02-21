@@ -20,16 +20,16 @@ class MoviesController < ApplicationController
 	    @sorting = session[:sort_by]
     end
 
-    if @sorting != session[:sort_by]
-	    session[:sort_by] = @sorting 
-    end
+#    if @sorting != session[:sort_by]
+#	    session[:sort_by] = @sorting 
+#    end
 
     if @sorting == 'title'
 	    @movies = @movies.order(@sorting)
-	    @title_sort = 'hilite'
+	    @title_header = 'hilite'
     elsif @sorting == 'release_date'
 	    @movies = @movies.order(@sorting)
-	    @release_sort = 'hilite'
+	    @release_header = 'hilite'
     end
 
     #End Part 1
