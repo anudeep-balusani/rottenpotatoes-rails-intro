@@ -1,0 +1,8 @@
+GitHub Repo:
+
+http://github.com/anudeep-balusani/rottenpotatoes-rails-intro
+
+
+Heroku app:
+
+http://desolate-scrubland-44508.herokuapp.com/
